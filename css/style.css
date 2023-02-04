@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+.container {
+    margin: 0 auto;
+    width: 100%;
+    background-color: darkcyan;
+    text-align: center;
+}
+
+.block-weather {
+    margin: 0 auto;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+
+.block-weather-temp,
+.block-weather-wind {
+    margin: 20px 0;
+}
+
+
+#Vinn_1_,
+#Zapor_1_,
+#Dnepr_1_,
+#Herson_1_,
+#Lviv_1_,
+#Kiiv_1_ {
+    display: none;
+}
+
+.city {
+    cursor: pointer;
+}
