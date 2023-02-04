@@ -31,25 +31,17 @@ function fetch_2(temp_data) {
             console.log(data)
         })
 }
-const donetsk = document.querySelector(".donetsk")
-donetsk.addEventListener("mouseenter", () => {
-    console.log("DONETSK")
-    donetsk.style.opacity = 0.8;
-}
-)
-donetsk.addEventListener("mouseleave", () => {
-    donetsk.style.opacity = 1;
-})
 
-const cityes = document.querySelectorAll(".city-op");
-for (item of cityes) {
 
-    item.addEventListener("mouseenter", () => {
-        console.log(item)
-        item.style.opacity = 0.8;
+const cityes = document.querySelectorAll(".city");
+for (let key in cityes) {
+    cityes[key].addEventListener("mouseenter", () => {
+        cityes[key].style.opacity = 0.8;
+        console.log(cityes[key])
     }
     )
-    item.addEventListener("mouseleave", () => {
-        item.style.opacity = 1;
+    cityes[key].addEventListener("mouseleave", () => {
+        cityes[key].style.opacity = 1;
     })
+
 }
