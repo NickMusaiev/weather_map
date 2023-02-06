@@ -17,7 +17,6 @@ function check_city(arg) {
         );
 
 }
-// https://openweathermap.org/img/wn/04n@2x.png
 const block_weather_temp = document.querySelector(".block-weather-temp");
 const city_name = document.querySelector(".city-name");
 const block_weather_humidity = document.querySelector(".block-weather-humidity");
@@ -39,12 +38,30 @@ function fetch_2(temp) {
 }
 
 const cityes = document.querySelectorAll(".city");
+const cityes_text = document.querySelectorAll(".city text");
 const icon_DOM = document.querySelector(".icon");
+
+function vis_text() {
+    for (let key in cityes_text) {
+        // cityes_text[key].addEventListener("mouseenter", (e) => {
+
+        //     cityes_text[key].style.opacity = 1;
+
+        // })
+
+
+    }
+
+}
+
+
+
 for (let key in cityes) {
 
     cityes[key].addEventListener("mouseenter", (e) => {
         cityes[key].style.opacity = 0.8;
         city = e.target.id;
+        vis_text()
     }
     )
     cityes[key].addEventListener("mouseleave", () => {
@@ -52,10 +69,7 @@ for (let key in cityes) {
     })
     cityes[key].addEventListener("click", function coord(e) {
         check_city(city)
-        // icon_DOM.style.left = e.screenX + "px";
-        // icon_DOM.style.top = e.screenY + "px";
-        // console.log(e.screenX + "px")
-        // console.log(e.screenY + "px")
+
     })
 }
 
