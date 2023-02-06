@@ -1,8 +1,8 @@
 const city_write = document.querySelector(".city_write");
-document.querySelector(".go").addEventListener("click", () => {
-    console.log(city_write.value)
-    check_city(city_write.value)
-})
+// document.querySelector(".go").addEventListener("click", () => {
+//     console.log(city_write.value)
+//     check_city(city_write.value)
+// })
 
 let city = "";
 function check_city(arg) {
@@ -27,8 +27,8 @@ function fetch_2(temp) {
         .then(function (response) { return response.json() })
         .then(function (data) {
             console.log((data.main.temp - 273).toFixed(1))
-            block_weather_temp.innerHTML = `temp ${(data.main.temp - 273).toFixed(1)}°C`;
-            city_name.innerHTML = `city ${data.name}`;
+            block_weather_temp.innerHTML = `${(data.main.temp - 273).toFixed(1)}°C`;
+            city_name.innerHTML = `${data.name}`;
             block_weather_humidity.innerHTML = `humidity ${data.main.humidity}%`;
             icon.innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"alt="">`
 
@@ -39,6 +39,7 @@ function fetch_2(temp) {
 }
 
 const cityes = document.querySelectorAll(".city");
+const icon_DOM = document.querySelector(".icon");
 for (let key in cityes) {
 
     cityes[key].addEventListener("mouseenter", (e) => {
@@ -49,8 +50,12 @@ for (let key in cityes) {
     cityes[key].addEventListener("mouseleave", () => {
         cityes[key].style.opacity = 1;
     })
-    cityes[key].addEventListener("click", () => {
+    cityes[key].addEventListener("click", function coord(e) {
         check_city(city)
+        // icon_DOM.style.left = e.screenX + "px";
+        // icon_DOM.style.top = e.screenY + "px";
+        // console.log(e.screenX + "px")
+        // console.log(e.screenY + "px")
     })
 }
 
